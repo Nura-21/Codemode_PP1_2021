@@ -1,50 +1,80 @@
 #include <iostream>
 using namespace std;
-bool check_unique(int n, int a[]){
-    for(int i = 0; i < n; i++){
-        int val = a[i];
-        for(int j = i+1; j < n; ++j){
-            if(val == a[j]){
+
+bool unique(int n, int a[]){
+
+    for(int i = 0; i < n; ++i){
+
+        int value = a[i];
+
+        for(int j = i + 1; j < n; ++j){
+
+            if( value == a[j] ){
                 return false;
             }
+
         }
     }
     return true;
 }
 
-void print_duplicates(int n,int a[]){
-    bool no = false;
+int main(){
+
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);
+
+
+    int n; cin >> n; 
+    int a[n];
+    
+
+    
     for(int i = 0; i < n; ++i){
-        int j;
+        cin >> a[i];
+    }
+
+    int m; cin >> m;
+    int b[m];
+
+    for(int i = 0; i < m; ++i){
+        cin >> b[i];
+    }
+
+    /*
+    bool is_unique = true;
+
+    for(int i = 0; i < n; ++i){
+
+        int value = a[i];
+
         for(int j = i + 1; j < n; ++j){
-            if(a[i] == a[j]){
-                no = true;
-                cout << a[i] << " ";
+
+            if( value == a[j] ){
+                is_unique = false;
+                break;
             }
+
         }
     }
-    cout << endl;
-    if (!no){
-        cout << "Unique array" << endl;
-    }
-}
 
-
-int main(){
-    freopen("input.txt","r",stdin);
-    //freopen("output.txt","w",stdout);
-
-    int n; cin >> n;
-    int arr[n];
-    for(int i = 0; i < n; i++){
-        cin >> arr[i];
-    }    
-    
-    if(check_unique(n,arr)){
-        cout << "Yes" << endl;
+    if(is_unique == true){ 
+        cout << "Array is unique" << endl;
     }else{
-        cout << "No" << endl;
+        cout << "Array is not unique" << endl;
+    }*/
+    
+    if(unique(n, a)){
+        cout << "Array is unique" << endl;
+    }else{
+        cout << "Array is not unique" << endl;
     }
 
-    print_duplicates(n,arr);
+    if(unique(m, b)){
+        cout << "Array is unique" << endl;
+    }else{
+        cout << "Array is not unique" << endl;
+    }
 }
+
+// create array 
+// method to check array unique

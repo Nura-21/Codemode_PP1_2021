@@ -1,23 +1,19 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 int main(){
-    int n = 5;
-    int a[n][n];
-    for(int i = 0; i < n; i++){
-        a[0][i] = i;
-        a[i][0] = i;
-    }
-    for(int i = 1; i < n; i++){
-        for(int j = 1; j < n; j++){
-            a[i][j] = a[0][j] * a[i][0];
-        }
-    }
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            cout << a[i][j] << "   ";
-        }
-        cout << endl;
-    }
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
 
-    
+    string s;getline(cin,s);
+
+    string s1="";
+
+    for(int i=0;i<s.length();i++){
+        if(s[i]!='a' and s[i]!='e' and s[i]!='u' and s[i]!='o' and s[i]!='i')
+            s1+=s[i];
+    }
+    cout<<s1;
+
+    return 0;
 }
+//aieuo

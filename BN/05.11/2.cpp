@@ -1,31 +1,56 @@
-#include<iostream>
+#include <iostream>
+#include <algorithm>
 using namespace std;
+
+
 int main(){
-    freopen("input.txt", "r", stdin);
+
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);
+
+
     int n; cin >> n; 
-    int a[n],temp[n];
+    int a[n];
 
-    for (int i = 0; i < n; i++){
+    int ans[n];
+    
+    for(int i = 0; i < n; ++i){
         cin >> a[i];
-        temp[i] = -1;
+
+        ans[i] = -1;
     }
 
-    for (int i = 0; i < n; i++){
-        int cnt = 1;
-        for (int j = i + 1; j < n; j++){
-            if (a[i] == a[j]){
-                cnt++;
-                temp[j] = 0;
-            }
+    for(int i = 0; i < n; ++i){
+
+        if( a[i] % 2 == 0){
+
+            ans[i] = a[i];
+
         }
-        if (temp[i] != 0){
-            temp[i] = cnt;
-        }
+
     }
 
-    for (int i = 0; i < n; i++){
-        if (temp[i] == 1){
-        cout << a[i] << " ";
+
+    for(int i = 0; i < n; ++i){
+        cout << ans[i] << " ";
+    }
+
+    cout << endl;
+
+    sort(ans,ans + n);
+    
+    cout << "Sorted" << endl;
+
+    for(int i = 0; i < n; ++i){
+
+        if(ans[i] != -1){
+            cout << ans[i] << " ";
         }
+        
     }
 }
+
+
+// create array
+// delete even values
+// sort
