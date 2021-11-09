@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    string s; cin >> s;
+
+    for(int i = 0 ; i < s.size(); ++i){
+        if(s[i] >= 'A' && s[i] <= 'Z'){
+
+            s[i] += 32;
+            // s[0] = s[0] + 32
+
+        }
+    }
+    cout << s;
+}
