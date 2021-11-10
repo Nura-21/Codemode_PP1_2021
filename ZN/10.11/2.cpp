@@ -1,18 +1,7 @@
 //string representations of arrays are equal?
-//function using recursion
 
 #include <iostream>
 using namespace std;
-
-string represent(string * a[], int n, int i, string ans){
-    if(i + 1 == n){
-        return ans;
-    }
-    cout << i << ans << endl;
-    ans += *a[i];
-    represent(a, n, i + 1, ans);
-}
-
 int main(){
     int n; cin >> n; 
     string a[n];
@@ -41,6 +30,4 @@ int main(){
     }else{
         cout << "No" << endl;
     }
-
-    cout << represent(a,n,0,"");
 }
